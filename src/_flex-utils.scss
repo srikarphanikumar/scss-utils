@@ -1,0 +1,149 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Flex utilities
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    @extend .flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    @extend .flex;
+    flex-direction: column;
+}
+
+.flex-justify-start {
+    justify-content: flex-start;
+}
+
+.flex-justify-end {
+    justify-content: flex-end;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-justify-space-between {
+    justify-content: space-between;
+}
+
+.flex-justify-space-around {
+    justify-content: space-around;
+}
+
+.flex-align-start {
+    align-items: flex-start;
+}
+
+.flex-align-end {
+    align-items: flex-end;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-align-stretch {
+    align-items: stretch;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+// Mixin for flex gap
+@mixin flex-gap($gap) {
+    gap: $gap;
+
+    &>* {
+        margin: $gap / 2;
+    }
+}
+
+// Mixin for flex justify
+@mixin flex-justify($value) {
+    justify-content: $value;
+}
+
+// Mixin for flex align
+@mixin flex-align($value) {
+    align-items: $value;
+}
+
+// Mixin for flex direction
+@mixin flex-direction($value) {
+    flex-direction: $value;
+}
+
+// Generate flex-gap utility classes
+@for $i from 1 through 10 {
+    .flex-gap-#{$i} {
+        @include flex-gap($i * 0.5rem); // Adjust the multiplier as needed
+    }
+}
+
+// Additional Flexbox Utilities
+
+// Flex item ordering
+@for $i from 1 through 12 {
+    .flex-order-#{$i} {
+        order: $i;
+    }
+}
+
+// Flex item alignment
+.flex-align-self-start {
+    align-self: flex-start;
+}
+
+.flex-align-self-end {
+    align-self: flex-end;
+}
+
+.flex-align-self-center {
+    align-self: center;
+}
+
+.flex-align-self-stretch {
+    align-self: stretch;
+}
+
+// Flex item grow and shrink
+@for $i from 0 through 10 {
+    .flex-grow-#{$i} {
+        flex-grow: $i;
+    }
+
+    .flex-shrink-#{$i} {
+        flex-shrink: $i;
+    }
+}
+
+// Responsive flex utilities
+@mixin flex-responsive($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    @include flex-direction($direction);
+    @include flex-justify($justify);
+    @include flex-align($align);
+    @include flex-wrap($wrap);
+}
+
+// Utility for flex basis
+@mixin flex-basis($value) {
+    flex-basis: $value;
+}
+
+// Utility for flex
+@mixin flex($grow, $shrink, $basis) {
+    flex: $grow $shrink $basis;
+}

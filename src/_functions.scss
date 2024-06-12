@@ -1,0 +1,82 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Common SCSS Functions
+
+// Color Functions
+@function shade-color($color, $percent) {
+    @return mix(black, $color, $percent);
+}
+
+// Example: shade-color(red, 20%) => #990000
+
+@function complement-color($color) {
+    $complement: change-color($color, $hue: hue($color) + 180);
+    @return $complement;
+}
+
+// Example: complement-color(blue) => #ff00ff
+
+// Font Size Functions
+@function px-to-rem($px, $base: 16px) {
+    @return ($px / $base) * 1rem;
+}
+
+// Example: px-to-rem(16) => 1rem
+
+@function rem-to-px($rem, $base: 16px) {
+    @return $rem * $base;
+}
+
+// Example: rem-to-px(1) => 16px
+
+// String Functions
+@function add-quotes($string) {
+    @return quote($string);
+}
+
+// Example: add-quotes(hello) => "hello"
+
+@function remove-quotes($string) {
+    @return unquote($string);
+}
+
+// Example: remove-quotes("hello") => hello
+
+// Math Functions
+@function round-to($number, $places: 0) {
+    $t: 1;
+
+    @for $i from 1 through $places {
+        $t: $t * 10;
+    }
+
+    @return round($number * $t) / $t;
+}
+
+// Example: round-to(3.14159, 2) => 3.14
+
+@function average($numbers...) {
+    @return reduce($numbers, 0, '+') / length($numbers);
+}
+
+// Example: average(2, 4, 6, 8) => 5
+
+// List Functions
+@function first($list) {
+    @return nth($list, 1);
+}
+
+// Example: first(1 2 3 4 5) => 1
+
+@function last($list) {
+    @return nth($list, -1);
+}
+
+// Example: last(1 2 3 4 5) => 5

@@ -1,0 +1,106 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Media Query Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large-desktop: 1200px;
+$breakpoint-extra-large-desktop: 1440px;
+
+// Media Query Mixins with Ranges
+@mixin mobile-only {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin large-desktop-only {
+    @media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-large-desktop) {
+        @content;
+    }
+}
+
+@mixin extra-large-desktop-only {
+    @media (min-width: $breakpoint-large-desktop) and (max-width: $breakpoint-extra-large-desktop) {
+        @content;
+    }
+}
+
+@mixin mobile-up {
+    @media (min-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin large-desktop-up {
+    @media (min-width: $breakpoint-large-desktop) {
+        @content;
+    }
+}
+
+@mixin extra-large-desktop-up {
+    @media (min-width: $breakpoint-extra-large-desktop) {
+        @content;
+    }
+}
+
+@mixin mobile-down {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-down {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-down {
+    @media (max-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin large-desktop-down {
+    @media (max-width: $breakpoint-large-desktop) {
+        @content;
+    }
+}
+
+@mixin extra-large-desktop-down {
+    @media (max-width: $breakpoint-extra-large-desktop) {
+        @content;
+    }
+}

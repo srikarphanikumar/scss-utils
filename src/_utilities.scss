@@ -1,0 +1,201 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Utility Functions
+@function rem($pixels) {
+    @return #{$pixels / 16}rem;
+}
+
+@function em($target, $context: 16) {
+    @return #{$target / $context}em;
+}
+
+@function lighten($color, $amount) {
+    @return lighten($color, $amount);
+}
+
+@function darken($color, $amount) {
+    @return darken($color, $amount);
+}
+
+@function to-rgba($color, $alpha) {
+    @return rgba($color, $alpha);
+}
+
+@function strip-units($value) {
+    @return strip-units($value);
+}
+
+@function to-radians($degrees) {
+    @return $degrees * 0.0174533; // 1deg = π/180rad
+}
+
+@function to-degrees($radians) {
+    @return $radians * 57.2958; // 1rad = 180/πdeg
+}
+
+@function mod($a, $b) {
+    @return $a % $b;
+}
+
+@function clamp($value, $min, $max) {
+    @return max($min, min($value, $max));
+}
+
+@function triangle-area($base, $height) {
+    @return ($base * $height) / 2;
+}
+
+@function circle-area($radius) {
+    @return 3.14159 * ($radius * $radius);
+}
+
+@function fibonacci($n) {
+    $a: 0;
+    $b: 1;
+
+    @for $i from 1 through $n {
+        $temp: $b;
+        $b: $a + $b;
+        $a: $temp;
+    }
+
+    @return $a;
+}
+
+@function is-even($number) {
+    @return $number % 2==0;
+}
+
+@function is-odd($number) {
+    @return $number % 2 !=0;
+}
+
+// String Utility Functions
+@function capitalize($string) {
+    @return to-upper-case(str-slice($string, 1, 1))+str-slice($string, 2);
+}
+
+@function title-case($string) {
+    $words: split($string, ' ');
+    $title-cased-words: ();
+
+    @each $word in $words {
+        $title-cased-words: append($title-cased-words, capitalize($word));
+    }
+
+    @return join($title-cased-words, ' ');
+}
+
+@function hyphenate($string) {
+    @return to-lower-case(str-replace($string, ' ', '-'));
+}
+
+@function camel-case($string) {
+    $words: split($string, ' ');
+    $camel-cased-words: ();
+
+    @each $word in $words {
+        $camel-cased-words: append($camel-cased-words, capitalize($word));
+    }
+
+    @return join($camel-cased-words, '');
+}
+
+@function unique-id() {
+    @return 'id-'+unique-id();
+}
+
+@function reverse($string) {
+    $length: str-length($string);
+    $reversed: '';
+
+    @for $i from $length through 1 {
+        $reversed: #{$reversed}#{str-slice($string, $i, $i)};
+    }
+
+    @return $reversed;
+}
+
+@function truncate($string, $length) {
+    @if str-length($string)>$length {
+        @return str-slice($string, 1, $length)+'...';
+    }
+
+    @return $string;
+}
+
+@function repeat($string, $times) {
+    $result: '';
+
+    @for $i from 1 through $times {
+        $result: #{$result}#{string};
+    }
+
+    @return $result;
+}
+
+@function replace($string, $search, $replace) {
+    @return str-replace($string, $search, $replace);
+}
+
+@function contains($string, $substring) {
+    @return str-index($string, $substring) !=null;
+}
+
+// Number Utility Functions
+@function is-number($value) {
+    @return type-of($value)==number;
+}
+
+@function is-integer($value) {
+    @return is-number($value) and $value==round($value);
+}
+
+@function is-decimal($value) {
+    @return is-number($value) and not is-integer($value);
+}
+
+// List Utility Functions
+@function is-list($value) {
+    @return type-of($value)==list;
+}
+
+@function list-length($list) {
+    @return length($list);
+}
+
+@function list-nth($list, $n) {
+    @return nth($list, $n);
+}
+
+@function list-head($list) {
+    @return nth($list, 1);
+}
+
+@function list-tail($list) {
+    @return nth($list, length($list));
+}
+
+// Map Utility Functions
+@function is-map($value) {
+    @return type-of($value)==map;
+}
+
+@function map-keys($map) {
+    @return map-keys($map);
+}
+
+@function map-values($map) {
+    @return map-values($map);
+}
+
+@function map-get($map, $key) {
+    @return map-get($map, $key);
+}

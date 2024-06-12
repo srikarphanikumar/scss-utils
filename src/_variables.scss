@@ -1,0 +1,57 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Color Variables
+$color-red: #ff0000;
+$color-blue: #0000ff;
+$color-green: #00ff00;
+$color-yellow: #ffff00;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray: #808080;
+$color-light-gray: #d3d3d3;
+$color-dark-gray: #a9a9a9;
+
+// Commonly Used Color Variations
+$color-primary: $color-blue;
+$color-secondary: $color-green;
+$color-danger: $color-red;
+$color-warning: $color-yellow;
+$color-info: #17a2b8;
+$color-light: $color-light-gray;
+$color-dark: $color-dark-gray;
+
+// Typography Variables
+$font-family-helvetica: 'Helvetica Neue',
+Arial,
+sans-serif;
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-size-20: 20px;
+$line-height-1-5: 1.5;
+
+// Spacing Variables
+$spacing-8: 8px;
+$spacing-4: 4px;
+$spacing-16: 16px;
+
+// Border Radius
+$border-radius-4: 4px;
+$border-radius-2: 2px;
+$border-radius-8: 8px;
+
+// Shadows
+$box-shadow-2px: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-1px: 0 1px 2px rgba(0, 0, 0, 0.05);
+$box-shadow-4px: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+// Z-Index
+$z-index-modal: 1050;
+$z-index-dropdown: 1000;
+$z-index-tooltip: 1100;

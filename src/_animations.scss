@@ -1,0 +1,161 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Animation Mixins
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($name, $duration, $timing-function, $delay, $iteration-count, $direction, $fill-mode, $play-state) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing-function;
+    animation-delay: $delay;
+    animation-iteration-count: $iteration-count;
+    animation-direction: $direction;
+    animation-fill-mode: $fill-mode;
+    animation-play-state: $play-state;
+}
+
+// Define Keyframes
+@include keyframes(bounce) {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@include keyframes(spin) {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@include keyframes(fade-in) {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@include keyframes(pulse) {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@include keyframes(shake) {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+@include keyframes(slide-in) {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@include keyframes(zoom-in) {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+// Animation Classes
+.animated {
+    &.bounce {
+        @include animation(bounce, 1s, ease, 0s, infinite, normal, both, running);
+    }
+
+    &.spin {
+        @include animation(spin, 2s, linear, 0s, infinite, normal, both, running);
+    }
+
+    &.fade-in {
+        @include animation(fade-in, 1s, ease, 0s, 1, normal, both, running);
+    }
+
+    &.pulse {
+        @include animation(pulse, 1s, ease-in-out, 0s, infinite, normal, both, running);
+    }
+
+    &.shake {
+        @include animation(shake, 0.5s, ease-in-out, 0s, infinite, normal, both, running);
+    }
+
+    &.slide-in {
+        @include animation(slide-in, 1s, ease, 0s, 1, normal, both, running);
+    }
+
+    &.zoom-in {
+        @include animation(zoom-in, 1s, ease, 0s, 1, normal, both, running);
+    }
+}
+
+// Example Usage:
+// <div class="animated bounce">Bouncing Text</div>
+// <div class="animated spin">Spinning Image</div>
+// <div class="animated fade-in">Fading Element</div>
+// <div class="animated pulse">Pulsing Element</div>
+// <div class="animated shake">Shaking Element</div>
+// <div class="animated slide-in">Sliding In Element</div>
+// <div class="animated zoom-in">Zooming In Element</div>

@@ -1,0 +1,108 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Text Mixins
+@mixin text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin text-bold {
+    font-weight: bold;
+}
+
+@mixin text-italic {
+    font-style: italic;
+}
+
+// Border Mixins
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+// Button Mixins
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $spacing-8 $spacing-16;
+    border: none;
+    border-radius: $border-radius-4;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+    }
+}
+
+// Utility Mixins
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+// Additional Mixins
+@mixin text-size($size) {
+    font-size: $size;
+}
+
+@mixin text-color($color) {
+    color: $color;
+}
+
+@mixin border-side($side, $width, $style, $color) {
+    border-#{$side}: $width $style $color;
+}
+
+@mixin box-sizing($value) {
+    box-sizing: $value;
+}
+
+@mixin position($value) {
+    position: $value;
+}
+
+@mixin visibility($value) {
+    visibility: $value;
+}
+
+@mixin transition($properties, $duration, $timing) {
+    transition: $properties $duration $timing;
+}
+
+@mixin flex-align($value) {
+    align-items: $value;
+    justify-content: $value;
+}
+
+@mixin flex-direction($value) {
+    flex-direction: $value;
+}
+
+@mixin text-shadow($value) {
+    text-shadow: $value;
+}

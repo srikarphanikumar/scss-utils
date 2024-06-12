@@ -1,0 +1,117 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// _geometry.scss
+
+// Function to calculate the angle in radians
+@function to-radians($degrees) {
+    @return $degrees * 1deg / 1rad;
+}
+
+// Mixin to create a circle
+@mixin circle($size, $color) {
+    width: $size;
+    height: $size;
+    background-color: $color;
+    border-radius: 50%;
+}
+
+// Mixin to create a triangle
+@mixin triangle($width, $height, $color, $direction: up) {
+    width: 0;
+    height: 0;
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+
+    @if $direction==down {
+        border-bottom: $height solid $color;
+    }
+
+    @else {
+        border-top: $height solid $color;
+    }
+}
+
+// Mixin to create a rectangle
+@mixin rectangle($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+}
+
+// Mixin to create a square
+@mixin square($size, $color) {
+    @include rectangle($size, $size, $color);
+}
+
+// Mixin to create an oval
+@mixin oval($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    border-radius: 50% / 50%;
+}
+
+// Mixin to create a diamond
+@mixin diamond($size, $color) {
+    width: 0;
+    height: 0;
+    border: $size/2 solid $color;
+    transform: rotate(45deg);
+}
+
+// Mixin to create a parallelogram
+@mixin parallelogram($width, $height, $color, $angle: 45deg) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    transform: skewY($angle);
+}
+
+// Mixin to create a trapezoid
+@mixin trapezoid($width, $height, $color, $slope: 0.5) {
+    width: $width;
+    height: $height;
+    border-width: $height 0 $height ($width * $slope);
+    border-style: solid;
+    border-color: transparent transparent transparent $color;
+}
+
+// Classes
+.circle {
+    @include circle(50px, #f00);
+}
+
+.triangle {
+    @include triangle(0, 0, transparent, down);
+}
+
+.rectangle {
+    @include rectangle(100px, 50px, #0f0);
+}
+
+.square {
+    @include square(50px, #00f);
+}
+
+.oval {
+    @include oval(100px, 50px, #f00);
+}
+
+.diamond {
+    @include diamond(50px, #0f0);
+}
+
+.parallelogram {
+    @include parallelogram(100px, 50px, #00f, 30deg);
+}
+
+.trapezoid {
+    @include trapezoid(100px, 50px, #ff0, 0.3);
+}

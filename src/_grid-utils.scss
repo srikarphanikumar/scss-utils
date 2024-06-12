@@ -1,0 +1,97 @@
+/*
+ * SCSS Utilities
+ * Description: Reusable SCSS Utils
+ * Author: Srikar Phani Kumar Marti
+ * Version: 1.0.0
+ * License: ISC
+ * Repository: https://github.com/srikarphanikumar/scss-utils.git
+ */
+
+// Grid utilities
+.grid {
+    display: grid;
+}
+
+// Mixin for grid columns
+@mixin grid-cols($cols) {
+    grid-template-columns: repeat(#{$cols}, 1fr);
+}
+
+// Mixin for grid rows
+@mixin grid-rows($rows) {
+    grid-template-rows: repeat(#{$rows}, 1fr);
+}
+
+// Mixin for grid gap
+@mixin grid-gap($gap) {
+    grid-gap: $gap;
+}
+
+// Mixin for grid area
+@mixin grid-area($area) {
+    grid-area: $area;
+}
+
+// Mixin for grid column
+@mixin grid-column($start, $end) {
+    grid-column: $start / $end;
+}
+
+// Mixin for grid row
+@mixin grid-row($start, $end) {
+    grid-row: $start / $end;
+}
+
+// Mixin for grid template
+@mixin grid-template($template) {
+    grid-template: $template;
+}
+
+// Mixin for grid
+@mixin grid($cols, $rows, $gap) {
+    @include grid-cols($cols);
+    @include grid-rows($rows);
+    @include grid-gap($gap);
+}
+
+// Mixin for grid justify
+@mixin justify-self($value) {
+    justify-self: $value;
+}
+
+// Mixin for grid align
+@mixin align-self($value) {
+    align-self: $value;
+}
+
+// Mixin for grid justify and align
+@mixin place-self($justify, $align) {
+    @include justify-self($justify);
+    @include align-self($align);
+}
+
+// Mixin for grid justify content
+@mixin justify-content($value) {
+    justify-content: $value;
+}
+
+// Mixin for grid align content
+@mixin align-content($value) {
+    align-content: $value;
+}
+
+// Mixin for grid justify and align content
+@mixin place-content($justify, $align) {
+    @include justify-content($justify);
+    @include align-content($align);
+}
+
+// Example usage:
+// .grid { @include grid(3, 2, 20px); }
+// .grid-item { @include grid-area(header); }
+// .grid-item { @include justify-self(center); }
+// .grid-item { @include align-self(center); }
+// .grid-item { @include place-self(center, center); }
+// .grid { @include justify-content(center); }
+// .grid { @include align-content(center); }
+// .grid { @include place-content(center, center); }
