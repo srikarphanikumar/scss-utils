@@ -4,7 +4,7 @@
   "description": "Reusable SCSS Utils",
   "main": "src/index.scss",
   "scripts": {
-    "build": "node-sass src/index.scss dist/utils.css",
+    "build": "node-sass src/index.scss dist/@scss/utils.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
