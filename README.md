@@ -19,16 +19,16 @@ ISC
 You can install the package using npm or yarn:
 
 ````sh
-npm install @scss/utils
+npm install @mspk/scss-utils
 ````
 or
 ````sh
-yarn add @scss/utils
+yarn add @mspk/scss-utils
 ````
 
 ## Importing
 ````scss
-@import '~@scss/utils';
+@import '~@mspk/scss-utils';
 ````
 
 ## Files
