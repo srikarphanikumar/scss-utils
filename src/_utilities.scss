@@ -8,19 +8,19 @@
  */
 
 // Utility Functions
-@function rem($pixels) {
+@function to-rem($pixels) {
     @return #{$pixels / 16}rem;
 }
 
-@function em($target, $context: 16) {
+@function to-em($target, $context: 16) {
     @return #{$target / $context}em;
 }
 
-@function lighten($color, $amount) {
+@function lighten-color($color, $amount) {
     @return lighten($color, $amount);
 }
 
-@function darken($color, $amount) {
+@function darken-color($color, $amount) {
     @return darken($color, $amount);
 }
 
@@ -32,19 +32,19 @@
     @return strip-units($value);
 }
 
-@function to-radians($degrees) {
+@function degrees-to-radians($degrees) {
     @return $degrees * 0.0174533; // 1deg = π/180rad
 }
 
-@function to-degrees($radians) {
+@function radians-to-degrees($radians) {
     @return $radians * 57.2958; // 1rad = 180/πdeg
 }
 
-@function mod($a, $b) {
+@function modulo($a, $b) {
     @return $a % $b;
 }
 
-@function clamp($value, $min, $max) {
+@function clamp-value($value, $min, $max) {
     @return max($min, min($value, $max));
 }
 
@@ -112,7 +112,7 @@
     @return 'id-'+unique-id();
 }
 
-@function reverse($string) {
+@function reverse-string($string) {
     $length: str-length($string);
     $reversed: '';
 
@@ -123,7 +123,7 @@
     @return $reversed;
 }
 
-@function truncate($string, $length) {
+@function truncate-string($string, $length) {
     @if str-length($string)>$length {
         @return str-slice($string, 1, $length)+'...';
     }
@@ -131,7 +131,7 @@
     @return $string;
 }
 
-@function repeat($string, $times) {
+@function repeat-string($string, $times) {
     $result: '';
 
     @for $i from 1 through $times {
@@ -141,11 +141,11 @@
     @return $result;
 }
 
-@function replace($string, $search, $replace) {
+@function replace-substring($string, $search, $replace) {
     @return str-replace($string, $search, $replace);
 }
 
-@function contains($string, $substring) {
+@function contains-substring($string, $substring) {
     @return str-index($string, $substring) !=null;
 }
 
@@ -188,14 +188,14 @@
     @return type-of($value)==map;
 }
 
-@function map-keys($map) {
+@function map-keys-to($map) {
     @return map-keys($map);
 }
 
-@function map-values($map) {
+@function map-values-to($map) {
     @return map-values($map);
 }
 
-@function map-get($map, $key) {
+@function map-get-value($map, $key) {
     @return map-get($map, $key);
 }

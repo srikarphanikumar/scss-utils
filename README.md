@@ -15,6 +15,22 @@ ISC
 ## Repository
 [GitHub Repository](https://github.com/srikarphanikumar/scss-utils.git)
 
+## Installation
+You can install the package using npm or yarn:
+
+````sh
+npm install @scss/utils
+````
+or
+````sh
+yarn add @scss/utils
+````
+
+## Importing
+````scss
+@import '~@scss/utils';
+````
+
 ## Files
 
 <details>
@@ -202,7 +218,7 @@ last(1 2 3 4 5) => 5
 </details>
 
 #### Animations (as classes)</summary>
-````scss
+````html
 // This will add 'bounce' animation to the div tag
 <div class="animated bounce">Bouncing Text</div>
 
@@ -213,4 +229,7 @@ last(1 2 3 4 5) => 5
 <div class="animated shake">Shaking Element</div> // For 'shake'
 <div class="animated slide-in">Sliding In Element</div>// For 'slide-in'
 <div class="animated zoom-in">Zooming In Element</div> // For 'zoom-in'
+.
+.
+.
 ````
