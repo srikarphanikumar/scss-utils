@@ -4,12 +4,12 @@
   "description": "Reusable SCSS Utils",
   "main": "src/index.scss",
   "scripts": {
-    "build": "node-sass src/index.scss dist/@scss/utils.css",
+    "build": "node-sass src/index.scss dist/utils.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/srikarphanikumar/@scss/utils.git"
+    "url": "https://github.com/srikarphanikumar/scss-utils.git"
   },
   "keywords": [
     "scss",
@@ -27,9 +27,9 @@
   "author": "Srikar Phani Kumar Marti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/srikarphanikumar/@scss/utils/issues"
+    "url": "https://github.com/srikarphanikumar/scss-utils/issues"
   },
-  "homepage": "https://github.com/srikarphanikumar/@scss/utils#readme",
+  "homepage": "https://github.com/srikarphanikumar/scss-utils#readme",
   "dependencies": {
     "node-sass": "9.0.0"
   }

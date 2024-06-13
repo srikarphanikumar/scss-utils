@@ -13,7 +13,7 @@ Srikar Phani Kumar Marti
 ISC
 
 ## Repository
-[GitHub Repository](https://github.com/srikarphanikumar/@scss/utils.git)
+[GitHub Repository](https://github.com/srikarphanikumar/scss-utils.git)
 
 ## Files
 
